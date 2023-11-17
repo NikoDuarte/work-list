@@ -1,0 +1,37 @@
+<div class="row justify-content-center h-100">
+    <div class="col-md-auto align-self-center text-center">
+        <form [formGroup]="formRegister" autocomplete="off" (ngSubmit)="submitRegister()">
+            <h2>Work List | Register</h2>
+            <div class="my-4">
+                <mat-form-field class="w-100">
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput formControlName="username" required>
+                </mat-form-field>
+            </div>
+            <div class="my-2">
+                <mat-form-field class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput formControlName="email" required>
+                </mat-form-field>
+            </div>
+            <div class="my-2">
+                <mat-form-field class="w-100">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide" type="button">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="my-3">
+                <button class="btn btn-outline-link" type="button" [routerLink]="['/login']">
+                    ¿Ya tienes una cuenta? Inicia ahora!
+                </button>
+            </div>
+            <button class="btn btn-primary w-50" type="submit" [disabled]="formRegister.invalid">
+                Register
+            </button>
+        </form>
+    </div>
+</div>

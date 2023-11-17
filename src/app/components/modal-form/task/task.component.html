@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <form [formGroup]="formTask" autocomplete="off" (ngSubmit)="submitTask()">
+                <div class="my-2">
+                    <mat-form-field class="w-100">
+                        <mat-label>Title Task</mat-label>
+                        <input type="text" matInput formControlName="title" required>
+                    </mat-form-field>
+                </div>
+                <div class="my-2">
+                    <mat-form-field class="w-100">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="desc"></textarea>
+                    </mat-form-field>
+                </div>
+                <button class="btn btn-primary">
+                    Register task
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
